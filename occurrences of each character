@@ -1,0 +1,27 @@
+public static HashMap<Character,Integer> getCount(String str) {
+    char[] ch = str.toCharArray();
+
+    HashMap<Character, Integer> countLetter = new HashMap<>();
+
+    for (char c : ch) {
+
+        if (countLetter.containsKey(c)) {
+            int count = countLetter.get(c);
+            countLetter.replace(c, ++count);
+        }else{
+            countLetter.put(c,1);
+
+        }
+    }
+    System.out.println(countLetter);
+    return countLetter;
+}
+
+
+
+    public static void main(String[] args)
+    {
+        String str = "Yesterday";
+      getCount(str);
+
+    }
